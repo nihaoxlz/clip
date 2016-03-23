@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>监控信息</title>
+<script type="text/javascript"  src="Highcharts-4.2.3/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript"  src="Highcharts-4.2.3/js/highcharts.js"></script>
+<script lang="javascript" type="text/javascript"></script>
+
+
+<script>
+function showmenu(id) {
+	var list = document.getElementById("list"+id);
+	var menu = document.getElementById("menu"+id)
+	if (list.style.display=="none") {
+		document.getElementById("list"+id).style.display="block";
+		menu.className = "title1";
+	}else {
+		document.getElementById("list"+id).style.display="none";
+		menu.className = "title";
+	}
+} 
+</script>
+</head>
+
+
+<body>
+      <div  style="width:20%;height:280px; position:absolute; left:300px; left:20px;">
+         <div style="font:'Times New Roman', Times, serif; font-size:22px; color:#33CCFF">Hosts' Information</div>
+         <div style="position:absolute; left:150px; font:"Times New Roman", Times, serif; font-size:20px">IP:172.28.255.45</div>
+         <div style="position:absolute; left:650px; font:"Times New Roman", Times, serif; font-size:20px">IP:172.18.255.6</div>
+         <div style="padding-left:1160px; font:"Times New Roman", Times, serif; font-size:20px">IP:172.18.255.170</div>
+		 <img  class="title" id="menu1" onclick="showmenu('1')"src="C:\Users\lifang\Desktop\fore-end\lf\images\图片1.jpg" width="200" height="200" />
+	     	<div id="list1" class="content" style="display:none">
+               <ul>
+				 <li style=" list-style:none;">
+				 系统信息：Linux<br />
+        		 
+		服务器状态：已运行<br />
+        运行进程：5个<br />
+		网络传输：<br />
+     			上传：1.02KB/S<br />
+     			下载：0.12KB/S<br />
+		Cpu利用率：23.5%<br />
+		Memory利用率：65.2%<br />
+		Disk利用率：43.5%</li>
+     			 </ul>
+			</div >
+	  
+	  	<div  style="position:absolute;left:500px; top:45px;">
+		    <img class="title" id="menu2" onclick="showmenu('2')"src="C:\Users\lifang\Desktop\fore-end\lf\images\图片1.jpg" width="200" height="200"/>
+	          <div id="list2" class="content" style="display:none">
+                  <ul>
+					 <li style=" list-style:none;">
+				 	系统信息：Linux<br />
+        		 	
+					服务器状态：已运行<br />
+      			    运行进程：7个<br />
+				    网络传输：<br />
+     			上传：10.02KB/S<br />
+     			下载：43.15KB/S<br />
+					Cpu利用率：53.0%<br />
+					Memory利用率：32.7%<br />
+					Disk利用率：42.8%</li>
+					</li>
+                  </ul>
+		      </div>
+		</div>
+		<div  style="position:absolute;left:1000px; top:45px;">
+		    <img class="title" id="menu3" onclick="showmenu('3')"src="C:\Users\lifang\Desktop\fore-end\lf\images\图片1.jpg" width="200" height="200"/>
+	          <div id="list3" class="content" style="display:none">
+                  <ul>
+					<li style=" list-style:none;">
+						系统信息：windows<br />
+       					
+						服务器状态：已出错 <br />
+        				运行进程：0个 <br />
+						网络传输： <br />
+     							上传：0.00KB/S<br />
+     							下载：0.00KB/S<br />
+						Cpu利用率：0.0%<br />
+						Memory利用率：0.0%<br />
+						Disk利用率：0.0%
+					</li>
+                  </ul>
+		      </div>
+		</div>
+		
+	</div>
+</body>
+</html>

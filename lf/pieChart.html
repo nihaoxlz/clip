@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+    Pie
+</title>
+  <script type="text/javascript"  src="Highcharts-4.2.3/js/jquery-1.6.2.min.js"></script>
+ <script type="text/javascript"  src="Highcharts-4.2.3/js/highcharts.js"></script>
+ 
+    <script lang="javascript" type="text/javascript">
+     $(function () {
+    $('#container').highcharts({
+        chart: {
+		  
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+
+			
+        },
+		
+		colors:[
+		'#000000',
+		'#FF3300',
+ 		'#00FF66',		 
+		'#FFFF33'],
+        title: {
+            text: null,
+        },
+		
+				
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+			   
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false,
+					
+                    color: '#000000',
+                    connectorColor: '#000000',
+					distance:0,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+				
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Server share',
+            data: [
+                ['Run',   5.2],
+                ['Error',       1.0],
+                ['Register',       2.0],
+				['Shut',       0.9],
+               ]
+        }]
+		
+		
+    });
+});
+    </script>
+
+</head>
+<body>
+    	<div style="font:'Times New Roman', Times, serif; font-size:22px; color:#33CCFF">Servers' Information</div>
+        <div id="container" style="width:20%;height:280px; position:
+		absolute; left:500px;">
+        </div>
+</body>
+</html>

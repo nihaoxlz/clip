@@ -1,0 +1,25 @@
+/* CSS Document */
+.yj{
+    padding:10px; width:98%; height:300px;
+    border: 2px solid #000000;
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    border-radius:15px;
+	border-style:dotted;           
+}
+.yj1{
+	margin-top:10px;
+    padding:10px; width:98%; height:300px;
+    border: 2px solid #000000;
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px; 
+    border-radius:15px;
+	border-style:dotted;           
+}
+#piechart{
+padding-top:0;
+margin-top:0;}
+
+#monitor{
+padding-top:0;
+margin-top:0;}

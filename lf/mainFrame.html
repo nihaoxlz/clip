@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>cLips运维平台</title>
+<script language="javascript" type="text/javascript">
+function SetWinHeight(obj)
+{
+var win=obj;
+if (document.getElementById)
+{
+if (win &&!window.opera)
+{
+if (win.contentDocument && win.contentDocument.body.offsetHeight) 
+win.height = win.contentDocument.body.offsetHeight; 
+else if(win.Document && win.Document.body.scrollHeight)
+win.height = win.Document.body.scrollHeight;
+}
+}
+}
+var IsMousedown, LEFT, TOP, S;
+      document.getElementById("Mdown").onmousedown=function(e) {
+        S = document.getElementById("login");
+        IsMousedown = true;
+        e = e||event;
+        LEFT = e.clientX - parseInt(S.style.left);
+        TOP = e.clientY - parseInt(S.style.top);
+        document.body.onmousemove = function(e) {
+            e = e||event;
+            if (IsMousedown) {
+                S.style.left = e.clientX - LEFT + "px";
+                S.style.top = e.clientY - TOP + "px";
+            }
+        }
+        document.onmouseup=function(){IsMousedown=false;}
+   }
+
+function showmenu(id) {
+	var list = document.getElementById("list"+id);
+	var menu = document.getElementById("menu"+id)
+	if (list.style.display=="none") {
+		document.getElementById("list"+id).style.display="block";
+		menu.className = "title1";
+	}else {
+		document.getElementById("list"+id).style.display="none";
+		menu.className = "title";
+	}
+} 
+</script>
+
+<link href="Framecss.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+<div id="bgDiv" style="display:none;"> </div>
+<div class="navbar navbar-inverse" id="top">
+  <div class="navbar-inner">
+    <li class="brand divider-vertical" style="padding-top:20px;"> Clips </li>
+    <ul class="nav pull-right">
+      <li class="active"><a href="mainFrame.html">首页</a></li>
+      <li><a href="javascript:" onclick="bgDiv.style.display='';login.style.display='inline';" target="_blank" > LogIn </a></li> 
+      <li><a href="#">&nbsp;</a></li>
+    </ul>
+  </div>
+</div>
+<div id="framecontentLeft">
+  <div id="nav">
+	<div class="title" id="menu1" onclick="showmenu('1')">服务器部署模块</div>  <!--实现下拉块的展开与闭合-->
+	  <div id="list1" class="content" style="display:none">
+      <ul>
+        <li>服务器列表</li>
+        <li>电源管理</li>
+        <li>系统部署</li>
+      </ul>
+    </div>
+    <div class="title" id="menu2" onclick="showmenu('2')">服务器管理模块</div>
+    <div id="list2" class="content" style="display:none">
+      <ul>
+        <li>远程登录</li>
+        <li>文件管理</li>
+        <li>网络管理</li>
+      </ul>
+    </div>
+    <div class="title" id="menu3" onclick="showmenu('3') ">应用管理模块</div>
+    <div id="list3" class="content" style="display:none">
+      <ul>
+        <li>应用配置</li>
+        <li>应用控制</li>
+        <li>应用监控</li>
+      </ul>
+    </div>
+    
+	<div class="title" id="menu4" onclick="showmenu('4') ">监控管理模块</div>
+    <div id="list4" class="content" style="display:none;">
+      <ul>
+        <li><a href="Org.html" target="content">服务器信息</a></li>
+        <li><a href="datamonitor.html" target="content">监控设置</a></li>
+      </ul>
+    </div>
+	<div class="title" id="menu5" onclick="showmenu('5') ">日志管理模块</div>
+    <div id="list5" class="content" style="display:none">
+      <ul>
+        <li>日志列表</li>
+        <li>用户权限</li>
+        <li>日志告警</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="maincontent" style="overflow:visible;">
+ 
+<iframe id="content" name="content" onload="Javascript:SetWinHeight(this)" frameborder="0"
+	scrolling="no">
+
+<script type="text/javascript">
+	$(function(){
+	var _height=$("iframe").height();//获取当前窗口的高度
+    $('#content').css('height',_height+'px');
+
+});
+</script>
+</iframe>
+
+  <div style="position:absolute; left:250px; top:0px; z-index:1; display: none;" id="login"> 　
+    <div id="loginBox">　　　
+      <div class="login"> <span id="head" class="t2" title="关闭" onclick="login.style.display='none';bgDiv.style.display='none';" style="cursor:pointer;">X</span>
+        
+		<iframe id="inlogin" src="loginBox.html" frameborder="no" border="0" scrolling="no" style="margin:0px;"></iframe>
+		
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="bootstrap/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
